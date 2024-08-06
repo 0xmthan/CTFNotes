@@ -13,7 +13,7 @@ https://www.revshells.com/
 
 https://github.com/xnomas/TryHackMe-Writeups/tree/main/JPGchat
 
-sudo killall openvpn 
+
 ```zsh
 cat ~/.zsh_history
 sudo dpkg -i
@@ -24,6 +24,7 @@ chmod +x
 cat /etc/shadow
 cd ~/.ssh/ 
 service bluetooth restart
+sudo killall openvpn 
 ```
 ## ovpn
 ```zsh
