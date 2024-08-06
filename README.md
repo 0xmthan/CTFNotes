@@ -12,6 +12,8 @@ https://wigle.net/
 https://www.revshells.com/
 
 https://github.com/xnomas/TryHackMe-Writeups/tree/main/JPGchat
+
+sudo killall openvpn 
 ```zsh
 cat ~/.zsh_history
 sudo dpkg -i
