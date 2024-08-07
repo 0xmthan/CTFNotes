@@ -25,6 +25,7 @@ cat /etc/shadow
 cd ~/.ssh/ 
 service bluetooth restart
 sudo killall openvpn 
+export IP={Machine IP}
 ```
 ## ovpn
 ```zsh
@@ -32,70 +33,23 @@ sudo openvpn /path/to/file.ovpn
 ```
 ## nmap
 ```zsh
-nmap -sC -sV  10.10.86.183
+nmap -sC -sV 10.10.86.183
 ```
 ```zsh
 nmap -p-15000 -vv TARGET_IP -oG initial-scans
+```
+```zsh
+nmap -T4 -A -p- 
 ```
 ## dirb
 ```zsh
 dirb http://10.10.86.183/
 
------------------
-DIRB v2.22    
-By The Dark Raver
------------------
-
-START_TIME: Thu Jul 18 11:06:58 2024
-URL_BASE: http://10.10.86.183/
-WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
-
------------------
-
-GENERATED WORDS: 4612                                                          
-
----- Scanning URL: http://10.10.86.183/ ----
-==> DIRECTORY: http://10.10.86.183/assets/                                          
-+ http://10.10.86.183/index.html (CODE:200|SIZE:1062)                                
-+ http://10.10.86.183/robots.txt (CODE:200|SIZE:17)                                  
-+ http://10.10.86.183/server-status (CODE:403|SIZE:277)                              
-                                                                                     
----- Entering directory: http://10.10.86.183/assets/ ----                            
-(!) WARNING: Directory IS LISTABLE. No need to scan it.                              
-    (Use mode '-w' if you want to scan it anyway)                                    
-                                                                               
------------------
-END_TIME: Thu Jul 18 11:37:44 2024
-DOWNLOADED: 4612 - FOUND: 3
 ```
 
 ## gobuster 
 ```zsh 
-gobuster dir -u http://10.10.115.246/ -w /usr/share/dirb/wordlists/common.txt
-===============================================================
-Gobuster v3.6
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
-===============================================================
-[+] Url:                     http://10.10.73.181
-[+] Method:                  GET
-[+] Threads:                 10
-[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
-[+] Negative Status codes:   404
-[+] User Agent:              gobuster/3.6
-[+] Timeout:                 10s
-===============================================================
-Starting gobuster in directory enumeration mode
-===============================================================
-/.hta                 (Status: 403) [Size: 291]
-/.htaccess            (Status: 403) [Size: 296]
-/.htpasswd            (Status: 403) [Size: 296]
-/development          (Status: 301) [Size: 318] [--> http://10.10.73.181 development/]
-/index.html           (Status: 200) [Size: 158]
-/server-status        (Status: 403) [Size: 300]
-Progress: 4614 / 4615 (99.98%)
-===============================================================
-Finished
-===============================================================
+gobuster dir -u http://10.10.56.31/ -w /usr/share/dirb/wordlists/common.txt
 ```
 ## less
 ```zsh
@@ -103,7 +57,7 @@ less hello.txt
 Hello Mamy
 ```
 (cat)
-## finds
+## find
 ```zsh
 find / -type f -name user.txt 2>/dev/null
 ```
@@ -111,6 +65,9 @@ find / -type f -name user.txt 2>/dev/null
 https://gtfobins.github.io/
 ```zsh
 find / -user root -perm /4000 2>/dev/null
+```
+```zsh
+cat /etc/passwd
 ```
 ===> LinPEAS
 
@@ -140,6 +97,17 @@ https://www.youtube.com/watch?v=VM64fH6tEEU&ab_channel=RyanJohn
 ```zsh
 hydra -l ~Username~ -P 'list.txt' ssh://10.10.65.127
 ```
+
+```zsh
+hydra -l admin -P '/home/mamy/Desktop/rockyou.txt' -f 10.10.222.32 http-get /labs/basic_auth/    
+```
+```zsh
+hydra -l admin -P /home/mamy/Desktop/rockyou.txt 10.10.115.52 http-post-form "/admin/:user=admin&pass=^PASS^:F=Username or password invalid" -vV 
+```
+```zsh
+hydra -l John -P /home/mamy/Desktop/rockyou.txt 10.10.56.31 http-post-form "/components/user/controller.php?action=authenticate:username=^USER^&password=^PASS^&theme=default&language=en:Incorrect Username or Password" -s 62337
+```
+
 ## tee
 send output to a file
 
@@ -154,18 +122,7 @@ echo 'Hello Mamy' > ToMamy.txt
 zssh2john '/home/kali/Desktop/id_rsa' > ToJohn.txt
 ```
 ```zsh
-john '/home/kali/Desktop/New File' --wordlist='/home/kali/Desktop/rockyou.txt' 
-
-Using default input encoding: UTF-8
-Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
-Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
-Cost 2 (iteration count) is 1 for all loaded hashes
-Will run 4 OpenMP threads
-Press 'q' or Ctrl-C to abort, almost any other key for status
-beeswax          (/home/kali/Desktop/id_rsa)     
-1g 0:00:00:00 DONE (2024-07-19 14:56) 2.941g/s 243388p/s 243388c/s 243388C/s beeswax..bambino1
-Use the "--show" option to display all of the cracked passwords reliably
-Session completed. 
+john 'ToJohn.txt' --wordlist='/home/kali/Desktop/rockyou.txt' 
 ```
 ## enum4linux (Userrames) (too slow)
 ```zsh
@@ -256,3 +213,10 @@ sudo sshuttle -NHr root@10.200.52.200 --ssh-cmd 'ssh -i id_rsa' 10.200.52.0/24 -
 c : Connected to server.
 ```
 ##
+
+
+## crunch
+~~~zsh
+crunch 3 3 -o otp.txt -t %%% -s 100 -e 200 
+~~~
+
