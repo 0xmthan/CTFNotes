@@ -13,6 +13,9 @@ https://www.revshells.com/
 
 https://github.com/xnomas/TryHackMe-Writeups/tree/main/JPGchat
 
+https://dev.to/yowise/tryhackme-chrome-post-2-90j
+
+https://trustifi.com/url-defang-tool/
 
 ```zsh
 cat ~/.zsh_history
@@ -49,7 +52,7 @@ dirb http://10.10.86.183/
 
 ## gobuster 
 ```zsh 
-gobuster dir -u http://10.10.56.31/ -w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://10.10.13.178/ -w /usr/share/dirb/wordlists/common.txt
 ```
 ## less
 ```zsh
