@@ -62,6 +62,7 @@ sudo openvpn /path/to/file.ovpn
 ## nmap
 ```zsh
 nmap -sC -sV 10.10.86.183
+sudo nmap -sP 192.168.45.0/24
 ```
 ```zsh
 nmap -p-15000 -vv TARGET_IP -oG initial-scans
