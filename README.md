@@ -194,17 +194,22 @@ echo "42f749ade7f9e195bf475f37a44cafcb" > hash.txt
 hashcat -m 0 -a 0 hash.txt '/home/kali/Desktop/rockyou.txt'
 ```
 ## airmon
-*not finished
-```zsh
-sudo airmon-ng
+   ```bash
+   sudo airmon-ng start <interface>
+   ```
+   ```bash
+   sudo airodump-ng wlan0mon
+   ```
+   ```bash
+   sudo airodump-ng -c <channel> --bssid <BSSID> -w <output_file> wlan0mon
+   ```
 
-PHY     Interface       Driver          Chipset
-phy2    wlan0           rtl8xxxu        Realtek Semiconductor Corp. RTL8192EU 802.11b/g/n WLAN Adapter
-
-sudo airmon-ng check kill
-                                                         
-sudo airmon-ng start wlan0
-```
+   ```bash
+   sudo aireplay-ng -0 10 -a <BSSID> wlan0mon
+   ```
+   ```bash
+   sudo aircrack-ng -w <wordlist> -b <BSSID> <output_file>.cap
+   ```
 ## John
 ```zsh
 sudo ssh2john "/home/mamy/Desktop/useless/id_rsa (copy 1)" > HashForJohn.txt
