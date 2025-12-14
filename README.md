@@ -17,6 +17,10 @@ https://dev.to/yowise/tryhackme-chrome-post-2-90j
 
 https://trustifi.com/url-defang-tool/
 
+site:instagram.com intext:2mdtln
+
+https://annas-archive.org
+
 ```zsh
 cat ~/.zsh_history
 sudo dpkg -i
