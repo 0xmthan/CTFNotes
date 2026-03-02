@@ -1,5 +1,7 @@
 ## Tools
-[[Nmap]]
+[Nmap](./Tools/Nmap.md)
+[OpenVPN](./Tools/OpenVPN.md)
+
 ## random stuff
 https://gchq.github.io/CyberChef/
 
@@ -57,12 +59,6 @@ traceroute to google.com (172.217.17.238), 30 hops max, 60 byte packets
 15  142.250.60.30 (142.250.60.30)  263.945 ms 209.85.243.244 (209.85.243.244)  273.413 ms 142.251.227.250 (142.251.227.250)  198.286 ms
 16  muc11s14-in-f14.1e100.net (172.217.17.238)  116.935 ms 209.85.242.141 (209.85.242.141)  140.760 ms 209.85.248.179 (209.85.248.179)  345.331 ms
 ```  
-
-
-## ovpn
-```zsh
-sudo openvpn /path/to/file.ovpn
-```
 
 ## dirb
 ```zsh
@@ -131,15 +127,6 @@ hydra -l admin -P /home/mamy/Desktop/rockyou.txt 10.10.115.52 http-post-form "/a
 hydra -l John -P /home/mamy/Desktop/rockyou.txt 10.10.56.31 http-post-form "/components/user/controller.php?action=authenticate:username=^USER^&password=^PASS^&theme=default&language=en:Incorrect Username or Password" -s 62337
 ```
 
-## tee
-send output to a file
-
-![alt text](/assets/image-1.png)
-
-note: isnt it just ">" ??
-```zsh
-echo 'Hello Mamy' > ToMamy.txt
-```
 ## Find id-rsa passphrase
 ```zsh
 zssh2john '/home/kali/Desktop/id_rsa' > ToJohn.txt

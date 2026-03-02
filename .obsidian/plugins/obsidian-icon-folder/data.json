@@ -36,5 +36,6 @@
   "Tools/Nmap.md": "LiNetwork",
   "README.md": "LiBook",
   "Tools": "LiTerminal",
-  "assets": "LiImage"
+  "assets": "LiImage",
+  "Tools/OpenVPN.md": "LiNetwork"
 }
