@@ -1,5 +1,5 @@
-# CTFNotes
-
+## Tools
+[[Nmap]]
 ## random stuff
 https://gchq.github.io/CyberChef/
 
@@ -63,17 +63,7 @@ traceroute to google.com (172.217.17.238), 30 hops max, 60 byte packets
 ```zsh
 sudo openvpn /path/to/file.ovpn
 ```
-## nmap
-```zsh
-nmap -sC -sV 10.10.86.183
-sudo nmap -sP 192.168.45.0/24
-```
-```zsh
-nmap -p-15000 -vv TARGET_IP -oG initial-scans
-```
-```zsh
-nmap -T4 -A -p- 
-```
+
 ## dirb
 ```zsh
 dirb http://10.10.86.183/
