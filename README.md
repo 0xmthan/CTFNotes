@@ -1,5 +1,6 @@
 ## Tools
 [Nmap](./Tools/Nmap.md)
+
 [OpenVPN](./Tools/OpenVPN.md)
 
 ## random stuff
@@ -70,12 +71,6 @@ dirb http://10.10.86.183/
 ```zsh 
 gobuster dir -u http://10.10.13.178/ -w /usr/share/dirb/wordlists/common.txt
 ```
-## less
-```zsh
-less hello.txt
-Hello Mamy
-```
-(cat)
 ## find
 ```zsh
 find / -type f -name user.txt 2>/dev/null
@@ -227,9 +222,6 @@ xfreerdp /v:10.200.52.150 /u:Mamyy /p:123455
 sudo sshuttle -NHr root@10.200.52.200 --ssh-cmd 'ssh -i id_rsa' 10.200.52.0/24 -x 10.200.52.200
 c : Connected to server.
 ```
-##
-
-
 ## crunch
 ~~~zsh
 crunch 3 3 -o otp.txt -t %%% -s 100 -e 200 

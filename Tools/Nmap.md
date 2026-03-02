@@ -3,9 +3,7 @@
 Nmap is a powerful open-source tool for network discovery and security auditing. It allows you to discover hosts and services on a network, identify open ports, detect operating systems, and gather information about network infrastructure.
 
 ---
-
 ## Basic Syntax
-
 ```zsh
 nmap [Scan Type] [Options] [Target]
 ```
@@ -24,11 +22,9 @@ nmap [Scan Type] [Options] [Target]
 |`--exclude 10.10.86.5`|Exclude specific host(s)|
 
 ---
-
 ## Scan Types
 
 ### Basic Service & OS Detection
-
 ```zsh
 nmap -sC -sV $IP
 ```
@@ -38,7 +34,6 @@ nmap -sC -sV $IP
 - **Use case**: Quick reconnaissance on a single target
 
 ### Ping Sweep (Host Discovery)
-
 ```zsh
 sudo nmap -sP 192.168.45.0/24
 ```
@@ -52,7 +47,6 @@ sudo nmap -sP 192.168.45.0/24
 ```zsh
 nmap -T4 -A -p-
 ```
-
 - `-T4`: Timing template (aggressive, faster scan)
 - `-A`: Enable OS detection, version detection, script scanning, and traceroute
 - `-p-`: Scan all 65535 ports
@@ -60,7 +54,6 @@ nmap -T4 -A -p-
 - **Warning**: Slow and aggressive; may trigger IDS/IPS
 
 ### Extended Port Range Scan
-
 ```zsh
 nmap -p-15000 -vv TARGET_IP -oG initial-scans
 ```
@@ -71,9 +64,7 @@ nmap -p-15000 -vv TARGET_IP -oG initial-scans
 - **Use case**: Thorough scan of common ports with detailed output
 
 ---
-
 ## Common Options
-
 ### Port Selection
 
 |Option|Description|
@@ -144,57 +135,45 @@ nmap -p-15000 -vv TARGET_IP -oG initial-scans
 ## Practical Examples
 
 ### Discover Live Hosts on Network
-
 ```zsh
 sudo nmap -sn 192.168.1.0/24
 ```
 
 ### Quick Service Discovery
-
 ```zsh
 nmap -sC -sV $IP
 ```
 
 ### Stealth SYN Scan (SYN stealth)
-
 ```zsh
 sudo nmap -sS -p- -T2 $IP
 ```
 
 ### Comprehensive Enumeration
-
 ```zsh
 nmap -T4 -A -p- -v $IP -oA results
 ```
 
 ### Scan with Specific Script
-
 ```zsh
 nmap --script smb-enum-shares -p 445 $IP
 ```
-
 ### Check for Vulnerabilities
-
 ```zsh
 nmap --script vuln -p- $IP
 ```
-
 ### Firewall Evasion (Fragment packets)
-
 ```zsh
 nmap -f $IP
 ```
 
 ### Aggressive Scan with Output Formats
-
 ```zsh
 nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 ```
 
 ---
-
 ## Output Interpretation
-
 ### Port States
 
 |State|Meaning|
@@ -207,7 +186,6 @@ nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 |**closed\|filtered**|Likely closed but filtering makes certainty impossible|
 
 ### Service Information
-
 ```
 80/tcp   open     http        Apache httpd 2.4.41 (Ubuntu)
 443/tcp  open     ssl/http    Apache httpd 2.4.41 (Ubuntu)
@@ -217,17 +195,15 @@ nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 ---
 
 ## Tips & Best Practices
-
 1. **Start with service discovery** (`-sC -sV`) before aggressive scans
 2. **Use timing templates** (`-T`) based on network stability:
     - `-T2` for stealth/IDS evasion
     - `-T4` for trusted internal networks
 3. **Filter output** with grep for easy parsing:
-    
     ```zsh
     nmap -p- $IP | grep "open"
     ```
-    
+
 4. **Save results** in multiple formats (`-oA`) for later analysis
 5. **Combine tools**: Use nmap with other tools like:
     - `masscan` for faster initial scans
@@ -237,11 +213,8 @@ nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 7. **Use sudo** for advanced scan types (SYN, OS detection, ICMP)
 
 ---
-
 ## Common Scan Workflows
-
 ### Reconnaissance Phase
-
 ```zsh
 # 1. Discover live hosts
 sudo nmap -sn 192.168.1.0/24 -oG live-hosts.txt
@@ -251,7 +224,6 @@ nmap -sC -sV -p- 10.10.1.5 -oA service-enum
 ```
 
 ### Exploitation Phase
-
 ```zsh
 # 3. Detailed vulnerability scan
 nmap --script vuln -p- 10.10.1.5 -oX vuln-report.xml
@@ -261,7 +233,6 @@ nmap --script smb-enum* -p 445 10.10.1.5
 ```
 
 ### Validation Phase
-
 ```zsh
 # 5. Verify findings
 nmap -sC -sV -p 22,80,443,445 10.10.1.5
@@ -277,9 +248,7 @@ nmap -sC -sV -p 22,80,443,445 10.10.1.5
 - Always document your authorization and findings
 
 ---
-
 ## Resources
-
 - [Official Nmap Documentation](https://nmap.org/book/)
 - [NSE Script Reference](https://nmap.org/nsedoc/)
 - [Nmap Usage Examples](https://nmap.org/man/man1/nmap.1.html)

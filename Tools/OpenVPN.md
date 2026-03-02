@@ -3,17 +3,13 @@
 OpenVPN is an open-source VPN protocol that creates encrypted tunnels for secure communication over untrusted networks. It uses SSL/TLS for key exchange and supports symmetric encryption for data.
 
 ---
-
 ## Basic Syntax
-
 ```zsh
 sudo openvpn .ovpn
 ```
 
 ---
-
 ### Connect to a VPN
-
 ```zsh
 sudo openvpn /path/to/config.ovpn
 ```
@@ -21,32 +17,24 @@ sudo openvpn /path/to/config.ovpn
 - Requires `.ovpn` configuration file
 - Runs in foreground (shows connection logs)
 - Press `Ctrl+C` to disconnect
-
 ### Connect in Background
-
 ```zsh
 sudo openvpn /path/to/config.ovpn --daemon --log-append /var/log/openvpn.log
 ```
 
 - `--daemon`: Run as background process
 - `--log-append`: Save logs to file
-
 ### List Active Connections
-
 ```zsh
 sudo systemctl status openvpn@config-name
 ```
-
 ### Stop OpenVPN
-
 ```zsh
 sudo systemctl stop openvpn@config-name
 ```
 
 ---
-
 ## Configuration Files
-
 ### File Types
 
 | Format  | Description                |
@@ -56,7 +44,6 @@ sudo systemctl stop openvpn@config-name
 | `.key`  | Private key file           |
 | `.crt`  | Certificate file           |
 ### Configuration Location
-
 ```zsh
 # Linux
 ~/.config/openvpn/
@@ -77,28 +64,23 @@ sudo systemctl stop openvpn@config-name
 |`mute 10`|Suppress repeated messages|
 
 ---
-
 ## Practical Examples
 ### Connect with Custom Log
-
 ```zsh
 sudo openvpn ~/openvpn-configs/client.ovpn --log-append ~/openvpn.log
 ```
 
 ### Connect to Specific Server
-
 ```zsh
 sudo openvpn ~/openvpn-configs/client.ovpn --remote vpn.example.com 1194
 ```
 
 ### Override Cipher
-
 ```zsh
 sudo openvpn ~/openvpn-configs/client.ovpn --cipher AES-128-CBC
 ```
 
 ### Run as Systemd Service (Linux)
-
 ```zsh
 
 sudo cp client.ovpn /etc/openvpn/client.conf
@@ -109,7 +91,6 @@ sudo systemctl status openvpn@client
 ```
 
 ### Disconnect from Daemon Process
-
 ```zsh
 sudo systemctl stop openvpn@client
 ```
@@ -118,12 +99,10 @@ sudo systemctl stop openvpn@client
 
 ## Troubleshooting
 ### Check IP Address
-
 ```zsh
 curl ifconfig.me
 
 ```
-
 ### Common Errors
 
 | Error                   | Solution                                             |
@@ -133,19 +112,16 @@ curl ifconfig.me
 | `Cannot open config`    | Check file path and permissions                      |
 | `Authentication failed` | Verify credentials in config or certificate files    |
 
-
 ---
 
 ## Security Best Practices
 
 1. **Protect private keys**
-    
     ```zsh
     chmod 600 client.key
     ```
     
 2. **Use strong ciphers**
-    
     ```
     cipher AES-256-CBC
     auth SHA256
@@ -153,26 +129,22 @@ curl ifconfig.me
     ```
     
 3. **Keep config files secure**
-    
     ```zsh
     chmod 600 client.ovpn
     ```
     
 4. **Enable kill switch** (disconnect if VPN drops)
-    
     ```
     down /etc/openvpn/update-resolv-conf
     script-security 2
     ```
     
-5. **Verify certificates** before connecting
-    
+5. **Verify certificates** before connecting    
     ```zsh
     openssl x509 -in ca.crt -text -noout
     ```
-    
----
 
+---
 ## VPN Types by Use Case
 
 |Use Case|Protocol|Cipher|
@@ -183,9 +155,7 @@ curl ifconfig.me
 |Maximum Security|TCP|AES-256-GCM|
 
 ---
-
 ## Port Configuration
-
 ### Common VPN Ports
 
 |Port|Protocol|Use Case|
@@ -208,16 +178,12 @@ sudo openvpn /path/to/config.ovpn --remote vpn.example.com 443
 3. **Rotate certificates** regularly in production
 4. **Monitor bandwidth** to detect unusual activity
 5. **Test for DNS leaks** after connecting:
-    
     ```zsh
     nslookup example.com
     ```
-    
 
 ---
-
 ## Quick Reference Commands
-
 ```zsh
 # Start VPN
 sudo openvpn /path/to/config.ovpn
@@ -239,9 +205,7 @@ curl ifconfig.me
 ```
 
 ---
-
 ## Resources
-
 - [Official OpenVPN Documentation](https://openvpn.net/community-resources/)
 - [VPN Security Best Practices](https://openvpn.net/security-overview/)
 - [Configuration Reference](https://openvpn.net/man/openvpn.html)
