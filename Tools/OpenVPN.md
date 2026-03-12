@@ -4,13 +4,13 @@ OpenVPN is an open-source VPN protocol that creates encrypted tunnels for secure
 
 ---
 ## Basic Syntax
-```zsh
+```bash
 sudo openvpn .ovpn
 ```
 
 ---
 ### Connect to a VPN
-```zsh
+```bash
 sudo openvpn /path/to/config.ovpn
 ```
 
@@ -18,18 +18,18 @@ sudo openvpn /path/to/config.ovpn
 - Runs in foreground (shows connection logs)
 - Press `Ctrl+C` to disconnect
 ### Connect in Background
-```zsh
+```bash
 sudo openvpn /path/to/config.ovpn --daemon --log-append /var/log/openvpn.log
 ```
 
 - `--daemon`: Run as background process
 - `--log-append`: Save logs to file
 ### List Active Connections
-```zsh
+```bash
 sudo systemctl status openvpn@config-name
 ```
 ### Stop OpenVPN
-```zsh
+```bash
 sudo systemctl stop openvpn@config-name
 ```
 
@@ -44,7 +44,7 @@ sudo systemctl stop openvpn@config-name
 | `.key`  | Private key file           |
 | `.crt`  | Certificate file           |
 ### Configuration Location
-```zsh
+```bash
 # Linux
 ~/.config/openvpn/
 /etc/openvpn/
@@ -66,22 +66,22 @@ sudo systemctl stop openvpn@config-name
 ---
 ## Practical Examples
 ### Connect with Custom Log
-```zsh
+```bash
 sudo openvpn ~/openvpn-configs/client.ovpn --log-append ~/openvpn.log
 ```
 
 ### Connect to Specific Server
-```zsh
+```bash
 sudo openvpn ~/openvpn-configs/client.ovpn --remote vpn.example.com 1194
 ```
 
 ### Override Cipher
-```zsh
+```bash
 sudo openvpn ~/openvpn-configs/client.ovpn --cipher AES-128-CBC
 ```
 
 ### Run as Systemd Service (Linux)
-```zsh
+```bash
 
 sudo cp client.ovpn /etc/openvpn/client.conf
 
@@ -91,7 +91,7 @@ sudo systemctl status openvpn@client
 ```
 
 ### Disconnect from Daemon Process
-```zsh
+```bash
 sudo systemctl stop openvpn@client
 ```
 
@@ -99,7 +99,7 @@ sudo systemctl stop openvpn@client
 
 ## Troubleshooting
 ### Check IP Address
-```zsh
+```bash
 curl ifconfig.me
 
 ```
@@ -117,7 +117,7 @@ curl ifconfig.me
 ## Security Best Practices
 
 1. **Protect private keys**
-    ```zsh
+    ```bash
     chmod 600 client.key
     ```
     
@@ -129,7 +129,7 @@ curl ifconfig.me
     ```
     
 3. **Keep config files secure**
-    ```zsh
+    ```bash
     chmod 600 client.ovpn
     ```
     
@@ -140,7 +140,7 @@ curl ifconfig.me
     ```
     
 5. **Verify certificates** before connecting    
-    ```zsh
+    ```bash
     openssl x509 -in ca.crt -text -noout
     ```
 
@@ -165,7 +165,7 @@ curl ifconfig.me
 |80|TCP|Blend in with HTTP|
 |8080|TCP|Alternative|
 
-```zsh
+```bash
 sudo openvpn /path/to/config.ovpn --remote vpn.example.com 443
 ```
 
@@ -178,13 +178,13 @@ sudo openvpn /path/to/config.ovpn --remote vpn.example.com 443
 3. **Rotate certificates** regularly in production
 4. **Monitor bandwidth** to detect unusual activity
 5. **Test for DNS leaks** after connecting:
-    ```zsh
+    ```bash
     nslookup example.com
     ```
 
 ---
 ## Quick Reference Commands
-```zsh
+```bash
 # Start VPN
 sudo openvpn /path/to/config.ovpn
 

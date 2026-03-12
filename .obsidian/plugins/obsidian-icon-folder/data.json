@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiWifi",
       "LiImage",
       "LiTerminal",
       "LiBook",
@@ -34,8 +35,9 @@
     "useInternalPlugins": false
   },
   "Tools/Nmap.md": "LiNetwork",
-  "README.md": "LiBook",
   "Tools": "LiTerminal",
   "assets": "LiImage",
-  "Tools/OpenVPN.md": "LiNetwork"
+  "Tools/OpenVPN.md": "LiNetwork",
+  "README.md": "LiBook",
+  "Tools/Airmon-ng.md": "LiWifi"
 }

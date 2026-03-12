@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tools/Nmap.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nmap"
+              "title": "README"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "zsh",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -186,8 +187,9 @@
   "active": "454dbf64522584ed",
   "lastOpenFiles": [
     "Tools/OpenVPN.md",
-    "README.md",
     "Tools/Nmap.md",
+    "Tools/Airmon-ng.md",
+    "README.md",
     "assets/image.png",
     "assets/image-1.png",
     "Tools"

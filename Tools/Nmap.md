@@ -4,7 +4,7 @@ Nmap is a powerful open-source tool for network discovery and security auditing.
 
 ---
 ## Basic Syntax
-```zsh
+```bash
 nmap [Scan Type] [Options] [Target]
 ```
 
@@ -25,7 +25,7 @@ nmap [Scan Type] [Options] [Target]
 ## Scan Types
 
 ### Basic Service & OS Detection
-```zsh
+```bash
 nmap -sC -sV $IP
 ```
 
@@ -34,7 +34,7 @@ nmap -sC -sV $IP
 - **Use case**: Quick reconnaissance on a single target
 
 ### Ping Sweep (Host Discovery)
-```zsh
+```bash
 sudo nmap -sP 192.168.45.0/24
 ```
 
@@ -44,7 +44,7 @@ sudo nmap -sP 192.168.45.0/24
 
 ### Aggressive Full Scan
 
-```zsh
+```bash
 nmap -T4 -A -p-
 ```
 - `-T4`: Timing template (aggressive, faster scan)
@@ -54,7 +54,7 @@ nmap -T4 -A -p-
 - **Warning**: Slow and aggressive; may trigger IDS/IPS
 
 ### Extended Port Range Scan
-```zsh
+```bash
 nmap -p-15000 -vv TARGET_IP -oG initial-scans
 ```
 
@@ -135,40 +135,40 @@ nmap -p-15000 -vv TARGET_IP -oG initial-scans
 ## Practical Examples
 
 ### Discover Live Hosts on Network
-```zsh
+```bash
 sudo nmap -sn 192.168.1.0/24
 ```
 
 ### Quick Service Discovery
-```zsh
+```bash
 nmap -sC -sV $IP
 ```
 
 ### Stealth SYN Scan (SYN stealth)
-```zsh
+```bash
 sudo nmap -sS -p- -T2 $IP
 ```
 
 ### Comprehensive Enumeration
-```zsh
+```bash
 nmap -T4 -A -p- -v $IP -oA results
 ```
 
 ### Scan with Specific Script
-```zsh
+```bash
 nmap --script smb-enum-shares -p 445 $IP
 ```
 ### Check for Vulnerabilities
-```zsh
+```bash
 nmap --script vuln -p- $IP
 ```
 ### Firewall Evasion (Fragment packets)
-```zsh
+```bash
 nmap -f $IP
 ```
 
 ### Aggressive Scan with Output Formats
-```zsh
+```bash
 nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 ```
 
@@ -200,7 +200,7 @@ nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
     - `-T2` for stealth/IDS evasion
     - `-T4` for trusted internal networks
 3. **Filter output** with grep for easy parsing:
-    ```zsh
+    ```bash
     nmap -p- $IP | grep "open"
     ```
 
@@ -215,7 +215,7 @@ nmap -T4 -A -p- -vv $IP -oN scan.txt -oX scan.xml -oG scan.grep
 ---
 ## Common Scan Workflows
 ### Reconnaissance Phase
-```zsh
+```bash
 # 1. Discover live hosts
 sudo nmap -sn 192.168.1.0/24 -oG live-hosts.txt
 
@@ -224,7 +224,7 @@ nmap -sC -sV -p- 10.10.1.5 -oA service-enum
 ```
 
 ### Exploitation Phase
-```zsh
+```bash
 # 3. Detailed vulnerability scan
 nmap --script vuln -p- 10.10.1.5 -oX vuln-report.xml
 
@@ -233,7 +233,7 @@ nmap --script smb-enum* -p 445 10.10.1.5
 ```
 
 ### Validation Phase
-```zsh
+```bash
 # 5. Verify findings
 nmap -sC -sV -p 22,80,443,445 10.10.1.5
 ```
