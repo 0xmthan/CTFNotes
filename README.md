@@ -38,6 +38,9 @@ cd ~/.ssh/
 service bluetooth restart
 sudo killall openvpn 
 export IP={Machine IP}
+
+#list connected ssh
+ss -tnp | grep ':22' | grep ESTAB
 ```
 
 ### traceroute
