@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiCat",
       "LiWifi",
       "LiImage",
       "LiTerminal",
-      "LiBook",
-      "LiNetwork"
+      "LiBook"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -39,5 +39,6 @@
   "assets": "LiImage",
   "Tools/OpenVPN.md": "LiNetwork",
   "README.md": "LiBook",
-  "Tools/Airmon-ng.md": "LiWifi"
+  "Tools/Airmon-ng.md": "LiWifi",
+  "Tools/Hashcat.md": "LiCat"
 }

@@ -1,6 +1,8 @@
 ## Tools
 [Airmon-ng](./Tools/Airmon-ng.md)
 
+[Hashcat](./Tools/Hashcat.md)
+
 [Nmap](./Tools/Nmap.md)
 
 [OpenVPN](./Tools/OpenVPN.md)
@@ -168,12 +170,7 @@ steghide extract -sf /home/mamy/Desktop/useless/white_rabbit_1.jpg
  Enter passphrase: 
  wrote extracted data to "hint.txt".  
 ``` 
-## hashcat
-```bash
-echo "42f749ade7f9e195bf475f37a44cafcb" > hash.txt
 
-hashcat -m 0 -a 0 hash.txt '/home/kali/Desktop/rockyou.txt'
-```
 ## John
 ```bash
 sudo ssh2john "/home/mamy/Desktop/useless/id_rsa (copy 1)" > HashForJohn.txt
