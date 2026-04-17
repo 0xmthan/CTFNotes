@@ -1,7 +1,11 @@
 ## Tools
 [Airmon-ng](./Tools/Airmon-ng.md)
 
+[ffuf](./Tools/ffuf.md)
+
 [Hashcat](./Tools/Hashcat.md)
+
+[John the Ripper](./Tools/John.md)
 
 [Nmap](./Tools/Nmap.md)
 
