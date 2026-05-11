@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiMap",
+      "LiArrowUp01",
       "LiPersonStanding",
       "LiAppWindowMac",
-      "LiCat",
-      "LiWifi",
-      "LiImage"
+      "LiCat"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -34,7 +34,6 @@
     "debugMode": false,
     "useInternalPlugins": false
   },
-  "Tools/Nmap.md": "LiNetwork",
   "Tools": "LiTerminal",
   "assets": "LiImage",
   "Tools/OpenVPN.md": "LiNetwork",
@@ -42,5 +41,9 @@
   "Tools/Airmon-ng.md": "LiWifi",
   "Tools/Hashcat.md": "LiCat",
   "Tools/ffuf.md": "LiAppWindowMac",
-  "Tools/John.md": "LiPersonStanding"
+  "Tools/John.md": "LiPersonStanding",
+  "Tools/Hydra.md": "LiArrowUp01",
+  "Tools/netcat.md": "LiCat",
+  "Tools/sqlmap.md": "LiMap",
+  "Tools/Nmap.md": "LiMap"
 }

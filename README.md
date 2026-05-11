@@ -5,11 +5,17 @@
 
 [Hashcat](./Tools/Hashcat.md)
 
+[Hydra](./Tools/Hydra.md)
+
 [John the Ripper](./Tools/John.md)
+
+[netcat](./Tools/netcat.md)
 
 [Nmap](./Tools/Nmap.md)
 
 [OpenVPN](./Tools/OpenVPN.md)
+
+[sqlmap](./Tools/sqlmap.md)
 
 ## random stuff
 https://gchq.github.io/CyberChef/
