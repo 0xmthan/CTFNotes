@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Tools/Gobuster.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Gobuster"
             }
           }
         ],
@@ -214,14 +214,15 @@
   },
   "active": "d95753fe1661830a",
   "lastOpenFiles": [
+    "Tools/ffuf.md",
+    "Tools/Gobuster.md",
+    "README.md",
     "Tools/sqlmap.md",
     "assets/image.png",
     "Tools/netcat.md",
     "Tools/Hydra.md",
-    "README.md",
     "Tools/Nmap.md",
     "Tools/Hashcat.md",
-    "Tools/ffuf.md",
     "Tools/Airmon-ng.md",
     "Tools/John.md",
     "Tools/OpenVPN.md",
