@@ -113,12 +113,12 @@ ffuf -u http://$IP/FUZZ -w wordlist.txt -fs 1234
 
 ### Output
 
-| Option | Description |
-| ------ | ----------- |
-| `-o results.json` | Save output to file |
-| `-of json` | Output format: `json`, `csv`, `ejson`, `html`, `md`, `all` |
-| `-v` | Verbose: show full URL and redirect target |
-| `-s` | Silent mode (no banner, just results) |
+| Option            | Description                                                |
+| ----------------- | ---------------------------------------------------------- |
+| `-o results.json` | Save output to file                                        |
+| `-of json`        | Output format: `json`, `csv`, `ejson`, `html`, `md`, `all` |
+| `-v`              | Verbose: show full URL and redirect target                 |
+| `-s`              | Silent mode (no banner, just results)                      |
 
 ### Request Options
 

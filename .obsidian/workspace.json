@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Tools/Nmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Nmap"
             }
           }
         ],
@@ -236,24 +236,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "a6b859e9b649aab3",
+  "active": "710c737d1d31369f",
   "lastOpenFiles": [
-    "Tools/Gobuster.md",
+    "lan-detail.xml",
+    "lan-detail.gnmap",
+    "lan-detail.nmap",
+    "live-hosts.txt",
     "Tools/ffuf.md",
+    "lists/directory-list-2.3-small.txt",
     "Tools/Airmon-ng.md",
+    "Tools/Gobuster.md",
+    "lists/rockyou.txt",
+    "lists/directory-list-2.3-medium.txt",
+    "lists",
+    "untitled folder",
+    "rockyou.txt",
+    "directory-list-2.3-medium.txt",
+    "Tools/Hashcat.md",
+    "Tools/Nmap.md",
+    "README.md",
     "2026.md",
     "alex.md",
     "Untitled.canvas",
     "assets/image.png",
-    "Tools/Nmap.md",
     "Tools/Hydra.md",
     "Tools/sqlmap.md",
     "Tools/OpenVPN.md",
-    "README.md",
     "Tools/John.md",
     "Tools/netcat.md",
-    "Tools/Hashcat.md",
-    "assets/image-1.png",
-    "Tools"
+    "assets/image-1.png"
   ]
 }
