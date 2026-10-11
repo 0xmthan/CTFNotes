@@ -327,7 +327,8 @@ sudo airmon-ng stop wlan0mon
 
 ## Related Tools
 
-- **Hashcat** - Faster GPU-accelerated cracking
+- **[Hashcat](./Hashcat.md)** - Faster GPU-accelerated cracking (`-m 22000` for WPA handshakes)
+- **[tshark](./tshark.md)** / **[tcpdump](./tcpdump.md)** - Inspect and carve the captured `.cap` files
 - **Pyrit** - Alternative WPA/WPA2 cracking tool
 - **Wireshark** - Packet analysis and decryption
 

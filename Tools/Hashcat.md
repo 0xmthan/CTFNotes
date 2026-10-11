@@ -299,7 +299,7 @@ hashcat -m 22000 handshake.hc22000 rockyou.txt
 ## Related Tools
 
 - **[Airmon-ng / Aircrack-ng](./Airmon-ng.md)** - Capture WPA handshakes to feed into hashcat
-- **John the Ripper** - Alternative CPU-based cracker, useful for SSH keys
+- **[John the Ripper](./John.md)** - Alternative CPU-based cracker, useful for SSH keys
 - **hcxtools** - Convert `.cap` files to hashcat-compatible format
 - **CrackStation** - Online lookup for common hashes
 

@@ -1,7 +1,11 @@
 ## Tools
 [Airmon-ng](./Tools/Airmon-ng.md)
 
+[arp-scan](./Tools/arp-scan.md)
+
 [ffuf](./Tools/ffuf.md)
+
+[Gobuster](./Tools/Gobuster.md)
 
 [Hashcat](./Tools/Hashcat.md)
 
@@ -9,13 +13,21 @@
 
 [John the Ripper](./Tools/John.md)
 
+[masscan](./Tools/masscan.md)
+
 [netcat](./Tools/netcat.md)
+
+[netdiscover](./Tools/netdiscover.md)
 
 [Nmap](./Tools/Nmap.md)
 
 [OpenVPN](./Tools/OpenVPN.md)
 
 [sqlmap](./Tools/sqlmap.md)
+
+[tcpdump](./Tools/tcpdump.md)
+
+[tshark](./Tools/tshark.md)
 
 ## random stuff
 https://gchq.github.io/CyberChef/

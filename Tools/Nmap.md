@@ -248,6 +248,16 @@ nmap -sC -sV -p 22,80,443,445 10.10.1.5
 - Always document your authorization and findings
 
 ---
+## Related Tools
+
+- **[masscan](./masscan.md)** - Much faster initial port sweep; feed its open ports into Nmap for `-sC -sV`
+- **[arp-scan](./arp-scan.md)** / **[netdiscover](./netdiscover.md)** - Layer-2 host discovery when ICMP is filtered
+- **[Gobuster](./Gobuster.md)** / **[ffuf](./ffuf.md)** - Enumerate web content on the HTTP ports Nmap finds
+- **[Hydra](./Hydra.md)** - Brute-force credentials on the services Nmap identifies
+- **[netcat](./netcat.md)** - Manual banner grab / quick port check on a single port
+- **[tcpdump](./tcpdump.md)** - Passively watch what the target sends back during a scan
+
+---
 ## Resources
 - [Official Nmap Documentation](https://nmap.org/book/)
 - [NSE Script Reference](https://nmap.org/nsedoc/)
